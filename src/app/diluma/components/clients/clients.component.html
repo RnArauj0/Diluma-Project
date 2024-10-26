@@ -1,0 +1,107 @@
+<div class="table-container">
+  <mat-toolbar color="primary">
+    <span> Clients </span>
+    <span class="spacer"></span>
+    <button mat-raised-button color="accent" (click)="openAddClientDialog()"> Add Client</button>
+  </mat-toolbar>
+
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label> Filter by name </mat-label>
+    <input matInput [(ngModel)]="filterValue" (ngModelChange)="applyFilter('name', filterValue)" placeholder="Find by name">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-filed">
+    <mat-label> Filter by Status </mat-label>
+    <mat-select (selectionChange)="applyFilter('status', $event.value)">
+      <mat-option value = ""> All</mat-option>
+      <mat-option value="active">Active</mat-option>
+      <mat-option value="inactive">Inactive</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="fullName">
+      <th mat-header-cell *matHeaderCellDef> Name  </th>
+      <td mat-cell *matCellDef="let client"> {{client.fullName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let client">
+        <span [ngClass]="client.status === 'active' ? 'active-status' : 'inactive-status'">
+          {{client.status === 'active' ? 'Active' : 'Inactive'}}
+        </span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let client">
+        <button mat-icon-button color ="warn" (click)="deleteClient(client.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<!-- Dialogo paara agregar al cliente -->
+<ng-template #addClientDialog>
+  <h2 mat-dialog-title>Add client</h2>
+  <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Full name </mat-label>
+      <input matInput formControlName="fullName" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>DNI</mat-label>
+      <input matInput formControlName="dni" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="phone" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Birthdate Date</mat-label>
+      <input matInput formControlName="birthDate" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="clientForm.invalid">Add</button>
+  </form>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

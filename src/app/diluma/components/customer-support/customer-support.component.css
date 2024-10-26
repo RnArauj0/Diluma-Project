@@ -1,0 +1,24 @@
+.support-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  background-color: #f5f5f5;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  background-color: green;
+  color: white;
+}

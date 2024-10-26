@@ -1,0 +1,61 @@
+{
+  "users": [
+    {
+      "firstName": "Renzo",
+      "lastName": "Araujo",
+      "email": "renzo@example.com",
+      "password": "123456",
+      "dni": "74119502",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "firstName": "Adán",
+      "lastName": "Mamani",
+      "email": "adanmamani@example.com",
+      "password": "987654",
+      "dni": "79890510"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "fullName": "Juan Tafur",
+      "dni": "87654321",
+      "phone": "123-456-7890",
+      "email": "juan@example.com",
+      "birthDate": "1990-01-01",
+      "status": "active"
+    }
+  ],
+  "products": [
+    {
+      "name": "inca kola ",
+      "price": 3.5,
+      "currency": "PEN",
+      "stock": 18,
+      "description": "una inca kola especial",
+      "id": 2
+    }
+  ],
+  "wallet": [
+    {
+      "id": 1,
+      "description": "Caja principal",
+      "date": "2021-01-01",
+      "TCEA": 0.1
+    }
+  ],
+  "support": [
+    {
+      "id": 1,
+      "reportType": "bug",
+      "description": "No puedo ingresar a la plataforma"
+    },
+    {
+      "id": 1729906094258,
+      "reportType": "bug",
+      "description": "I can't see the log in dude."
+    }
+  ]
+}

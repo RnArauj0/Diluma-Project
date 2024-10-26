@@ -1,0 +1,93 @@
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7e2a5;
+}
+
+
+mat-card {
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+
+
+.login-section {
+  background-color: #78836c;
+  color: white;
+}
+
+mat-card-title.login-title {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+.register-section {
+  background-color: #3e556e;
+  color: white;
+}
+
+mat-card-title.register-title {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+button[color="primary"] {
+  background-color: #65a36e;
+  color: white;
+}
+
+button[color="primary"]:hover {
+  background-color: #5a9361;
+}
+
+button[color="accent"] {
+  background-color: #d97b4a;
+  color: white;
+}
+
+button[color="accent"]:hover {
+  background-color: #c4693a;
+}
+
+
+a {
+  font-size: 0.8em;
+  color: black;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
